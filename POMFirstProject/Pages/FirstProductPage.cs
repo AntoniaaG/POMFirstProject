@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace POMFirstProject.Pages
 {
-    internal class FirstItemPage
+    internal class FirstProductPage
     {
         private readonly By _color_blue_choice = By.CssSelector("#swatch26");
-        private readonly By _size_m_choice = By.CssSelector("#swatch79");
+        private readonly By _size_m_choice = By.CssSelector("#swatch78 > span.swatch-label");
         private readonly By _quantity = By.CssSelector("#qty");
         private readonly By _add_to_cart_button = By.CssSelector("div.add-to-cart-buttons > button > span > span");
 

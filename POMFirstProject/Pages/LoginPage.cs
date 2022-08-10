@@ -7,14 +7,14 @@ namespace POMFirstProject.Pages
     internal class LoginPage
     {
 
-        private readonly By _emailAddress = By.CssSelector("#email");
+        private readonly By _email_address = By.CssSelector("#email");
         private readonly By _password = By.CssSelector("#pass");
-        private readonly By _loginButton = By.CssSelector("#send2");
+        private readonly By _login_button = By.CssSelector("#send2");
 
 
         public void TypeEmail(String email)
         {
-            Driver.WebDriver.FindElement(_emailAddress).SendKeys(email);
+            Driver.WebDriver.FindElement(_email_address).SendKeys(email);
         }
         public void TypePassword(String password)
         {
@@ -22,7 +22,8 @@ namespace POMFirstProject.Pages
         }
         public void LoginButton()
         {
-            Driver.WebDriver.FindElement(_loginButton).Click();
+            Driver.WebDriver.FindElement(_login_button).Click();
+            WaitHelpers.WaitUntilDocumentReady();
         }
 
     }

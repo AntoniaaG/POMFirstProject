@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium;
 using POMFirstProject.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace POMFirstProject.Pages
 {
@@ -20,15 +15,15 @@ namespace POMFirstProject.Pages
         private readonly By _my_wishlist_option = By.CssSelector("#header-account > li:nth-child(2) > a");
         private readonly By _my_cart_option = By.CssSelector("#header-account > li:nth-child(3) > a");
         private readonly By _checkout_option = By.CssSelector("#header-account > li:nth-child(4) > a");
-        private readonly By register_option = By.CssSelector("#header-account > li:nth-child(5) > a");
+        private readonly By _register_option = By.CssSelector("#header-account > div > ul > li:nth-child(5) > a");
         private readonly By _login_option = By.CssSelector("#header-account > div > ul > li.last");
 
         private readonly By _search_field = By.CssSelector("#search");
         private readonly By _search_button = By.CssSelector(".button.search-button");
         private readonly By _category_list = By.CssSelector(".nav-primary > li");
-        private readonly By _woman_category = By.CssSelector("li.level0.nav-1.first.active.parent > a");
-
-        private readonly By _minicart = By.CssSelector(".header-minicart");
+        private readonly By _woman_category = By.CssSelector("#nav > ol.nav-primary > li.level0.nav-1");
+                                                            
+        private readonly By _minicart = By.CssSelector(".count");
         private readonly By _minicart_products_list = By.CssSelector(".mini-products-list");
         private readonly By _minicart_subtotal = By.CssSelector(".subtotal .price");
         private readonly By _minicart_add_button = By.CssSelector(".button.checkout-button");
@@ -72,7 +67,7 @@ namespace POMFirstProject.Pages
         }
         public void ClickRegister()
         {
-            Driver.WebDriver.FindElement(register_option).Click();
+            Driver.WebDriver.FindElement(_register_option).Click();
             WaitHelpers.WaitUntilDocumentReady();
         }
         public void ClickLogin()
@@ -90,6 +85,12 @@ namespace POMFirstProject.Pages
         {
             Driver.WebDriver.FindElement(_search_field).SendKeys(SearchString);
             Driver.WebDriver.FindElement(_search_button).Click();
+        }
+
+        public string GetMiniCart()
+        {
+            var text = Driver.WebDriver.FindElement(_minicart).Text;
+            return text;
         }
     }
 }

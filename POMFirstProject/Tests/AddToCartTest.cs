@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
 using POMFirstProject.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace POMFirstProject.Tests
 {
@@ -16,12 +11,13 @@ namespace POMFirstProject.Tests
         {
             Pages.Header.ClickWomenCategory();
             Pages.WomanCategoryPage.ClickNewArrivals();
-            Pages.WomanNewArrivalPage.ClickItem();
-            Pages.FirstItemPage.ClickColorChoice();
-            Pages.FirstItemPage.ClickSizeChoice();
-            Pages.FirstItemPage.SetQuantity();
-            Pages.FirstItemPage.ClickAddToCartButton();
-            Pages.CartPage.CheckCartPage();
+            Pages.WomanNewArrivalPage.ClickFirstProduct();
+            Pages.FirstProductPage.ClickColorChoice();
+            Pages.FirstProductPage.ClickSizeChoice();
+            Pages.FirstProductPage.SetQuantity();
+            Pages.FirstProductPage.ClickAddToCartButton();
+
+            Assert.AreEqual(1, Pages.Header.GetMiniCart());
 
         }
     }

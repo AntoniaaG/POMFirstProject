@@ -13,9 +13,12 @@ namespace POMFirstProject.Tests
         public static MyAccountPage MyAccountPage => InitPage(new MyAccountPage());
         public static WomanCategoryPage WomanCategoryPage => InitPage(new WomanCategoryPage());
         public static WomanNewArrivalPage WomanNewArrivalPage => InitPage(new WomanNewArrivalPage());
-        public static FirstItemPage FirstItemPage => InitPage(new FirstItemPage());
+        public static FirstProductPage FirstProductPage => InitPage(new FirstProductPage());
         public static CartPage CartPage => InitPage(new CartPage());
-
+        public static RegisterPage RegisterPage => InitPage(new RegisterPage());
+        public static CheckoutPage CheckoutPage => InitPage(new CheckoutPage());
+        public static CheckoutSuccessPage CheckoutSuccessPage => InitPage(new CheckoutSuccessPage());
+        public static CheckoutPageCheckAsGuest CheckoutPageCheckAsGuest => InitPage(new CheckoutPageCheckAsGuest());
 
         public static T InitPage<T>(T page)
         {
